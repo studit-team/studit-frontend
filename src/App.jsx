@@ -13,6 +13,7 @@ import './charts/ChartjsConfig';
 import Dashboard from './pages/Dashboard';
 import Test from "./pages/Test.jsx";
 import ConnectTest from "./pages/ConncetTest.jsx";
+import SingupPage from "./pages/user/SingupPage.jsx";
 
 function App() {
 
@@ -30,6 +31,8 @@ function App() {
         <Route exact path="/" element={<Dashboard />} />
         <Route exact path="/test" element={<Test />} />
         <Route exact path="/connect-test" element={<ConnectTest />} />
+
+        <Route exact path="/user/singup" element={<SingupPage />} />
       </Routes>
     </>
   );
