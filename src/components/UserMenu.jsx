@@ -1,9 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Transition from '../utils/Transition';
+//이미지
 import UserAvatar from '../images/user/user.png';
 import Logo from '../images/logo.png';
 
 function UserMenu() {
+
+  const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState(false);
   const modalContent = useRef(null);
 
@@ -107,7 +111,7 @@ function UserMenu() {
               <button
                   onClick={() => {
                     setModalOpen(false);
-                    // 회원가입 페이지로 이동하는 로직 (예: navigate('/user/signup'))
+                    // 회원`1가입 페이지로 이동하는 로직 (예: navigate('/user/signup'))
                   }}
                   className="text-violet-600 hover:text-violet-500 font-medium"
               >
@@ -117,7 +121,7 @@ function UserMenu() {
               <button
                     onClick={() => {
                       setModalOpen(false);
-                      // 회원가입 페이지로 이동하는 로직 (예: navigate('/user/signup'))
+                      navigate('/user/singup')
                     }}
                     className="text-violet-600 hover:text-violet-500 font-medium"
                 >
