@@ -22,6 +22,7 @@ import StudySchedule from "./pages/study/StudySchedule.jsx";
 import StudyAssignment from "./pages/study/StudyAssignment.jsx";
 import StudyFreeBoard from "./pages/study/StudyFreeBoard.jsx";
 import SingupPage from "./pages/user/SingupPage.jsx";
+import StudyCreatePage from "./pages/study/StudyCreatePage.jsx";
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
         <Route exact path="/test" element={<Test />} />
         <Route exact path="/connect-test" element={<ConnectTest />} />
         <Route exact path="/study/list" element={<StudyList />} />
+        <Route path="/study/create" element={<StudyCreatePage />} />
         <Route path="/study/:studyId" element={<StudyLayout />}>
           <Route index element={<StudyHome />} />
           <Route path="notice" element={<StudyNotice />} />

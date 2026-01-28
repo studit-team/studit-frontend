@@ -73,6 +73,10 @@ function StudyList() {
         fetchStudies();
     };
 
+    const handleCreateClick = () => {
+        navigate("/study/create");
+    };
+
     return (
         <div className="flex h-screen overflow-hidden">
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
@@ -126,11 +130,14 @@ function StudyList() {
                                         </svg>
                                     </button>
                                 </form>
-                                <button className="btn bg-violet-600 text-white hover:bg-violet-700 flex items-center shadow-md shadow-violet-200">
+                                <button
+                                    onClick={handleCreateClick}
+                                    className="btn bg-violet-600 text-white hover:bg-violet-700 flex items-center shadow-md shadow-violet-200 transition-all"
+                                >
                                     <svg className="fill-current shrink-0 w-4 h-4 mr-2" viewBox="0 0 16 16">
                                         <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
                                     </svg>
-                                    <span className="hidden xs:block">스터디 만들기</span>
+                                    <span className="hidden xs:block font-medium">스터디 만들기</span>
                                 </button>
                             </div>
                         </div>
