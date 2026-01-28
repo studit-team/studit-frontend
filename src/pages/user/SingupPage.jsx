@@ -6,8 +6,8 @@ function SingupPage() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
+        name: '',
         username: '',
-        email: '',
         password: '',
         passwordConfirm: '', // 추가
         phone: ''
@@ -61,8 +61,8 @@ function SingupPage() {
                                 <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">이름</label>
                                 <input
                                     type="text"
-                                    name="username"
-                                    value={formData.username}
+                                    name="name"
+                                    value={formData.name}
                                     onChange={handleChange}
                                     placeholder="이름을 입력하세요"
                                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-violet-500 outline-none transition-all dark:bg-gray-800 dark:text-white"
@@ -73,8 +73,8 @@ function SingupPage() {
                                 <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">이메일</label>
                                 <input
                                     type="email"
-                                    name="email"
-                                    value={formData.email}
+                                    name="username"
+                                    value={formData.username}
                                     onChange={handleChange}
                                     placeholder="example@studit.com"
                                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-violet-500 outline-none transition-all dark:bg-gray-800 dark:text-white"

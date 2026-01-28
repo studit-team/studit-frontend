@@ -14,7 +14,7 @@ function UserMenu() {
 
   // 로그인 폼 상태
   const [loginForm, setLoginForm] = useState({
-    email: '',
+    username: '',
     password: ''
   });
   const [error, setError] = useState('');
@@ -24,11 +24,11 @@ function UserMenu() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
-    const email = localStorage.getItem('email');
+    const name = localStorage.getItem('name');
 
     if (token && username) {
       setIsLoggedIn(true);
-      setUser({ username, email });
+      setUser({ username, name });
     }
   }, []);
 
@@ -69,20 +69,20 @@ function UserMenu() {
       );
 
       // 로그인 성공
-      const { token, userId, username, email, authorCode } = response.data;
+      const { token, userId, username, name, authorCode } = response.data;
 
       localStorage.setItem('token', token);
       localStorage.setItem('userId', userId);
       localStorage.setItem('username', username);
-      localStorage.setItem('email', email);
+      localStorage.setItem('name', name);
       localStorage.setItem('authorCode', authorCode);
 
       setIsLoggedIn(true);
-      setUser({ username, email });
+      setUser({ username, name });
       setModalOpen(false);
 
       // 폼 초기화
-      setLoginForm({ email: '', password: '' });
+      setLoginForm({ username: '', password: '' });
 
     } catch (err) {
       if (err.response) {
@@ -102,7 +102,7 @@ function UserMenu() {
     localStorage.removeItem('token');
     localStorage.removeItem('userId');
     localStorage.removeItem('username');
-    localStorage.removeItem('email');
+    localStorage.removeItem('name');
     localStorage.removeItem('authorCode');
 
     setIsLoggedIn(false);
@@ -120,7 +120,7 @@ function UserMenu() {
           <img className="w-8 h-8 rounded-full" src={UserAvatar} width="32" height="32" alt="User" />
           <div className="flex items-center truncate">
                     <span className="truncate ml-2 text-sm font-medium text-gray-600 dark:text-gray-100 group-hover:text-gray-800 dark:group-hover:text-white">
-                        {isLoggedIn ? user?.username : '로그인'}
+                        {isLoggedIn ? user?.name : '로그인'}
                     </span>
           </div>
         </button>
@@ -167,10 +167,10 @@ function UserMenu() {
                 <div className="space-y-4">
                   <div className="text-center">
                     <p className="text-lg font-semibold text-gray-800 dark:text-gray-100">
-                      환영합니다, {user?.username}님!
+                      환영합니다, {user?.name}님!
                     </p>
                     <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                      {user?.email}
+                      {user?.username}
                     </p>
                   </div>
 
@@ -210,8 +210,8 @@ function UserMenu() {
                       </label>
                       <input
                           type="email"
-                          name="email"
-                          value={loginForm.email}
+                          name="username"
+                          value={loginForm.username}
                           onChange={handleInputChange}
                           placeholder="email@example.com"
                           className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:ring-violet-500 focus:border-violet-500 dark:bg-gray-900 dark:text-white"
