@@ -16,6 +16,7 @@ function StudyHome() {
         ? studyData.regularDays.split(',').map(day => dayMap[day.trim()] || day)
         : [];
 
+
     /**
      * 가장 가까운 "미래" 일정 찾기 로직
      * 현재 시간 이후의 일정만 필터링하여 가장 빠른 순서대로 정렬 후 첫 번째 값 반환

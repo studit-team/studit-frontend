@@ -119,14 +119,22 @@ function CategoryFilter({ selectedCategories, setSelectedCategories }) {
 
                     <div className="py-2 px-1 mt-1 border-t border-gray-100 dark:border-gray-700 flex justify-between items-center">
                         <button
+                            type="button"
                             className="text-xs font-bold text-violet-600 hover:text-violet-700"
-                            onClick={() => setSelectedCategories([])}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedCategories([]);
+                            }}
                         >
                             초기화
                         </button>
                         <button
+                            type="button"
                             className="text-xs font-bold text-gray-400 hover:text-gray-600"
-                            onClick={() => setDropdownOpen(false)}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setDropdownOpen(false);
+                            }}
                         >
                             닫기
                         </button>
