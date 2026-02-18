@@ -266,7 +266,7 @@ function UserMenu() {
                     <button
                         onClick={() => {
                           setModalOpen(false);
-                          navigate('/find-email');
+                          navigate('/user/find-id');
                         }}
                         className="text-violet-600 hover:text-violet-500 font-medium"
                     >
