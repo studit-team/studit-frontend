@@ -35,7 +35,6 @@ function StudyLayout() {
         const response = await axios.get(`/api/studies/${studyId}/home`, {
           params: { userId: userId },
         });
-        console.log(response);
         setStudyData(response.data);
       } catch (error) {
         console.error("❌ 데이터 호출 실패:", error);
